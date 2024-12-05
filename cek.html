@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khigin Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tambahkan animasi CSS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .button-hover {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .button-hover:hover {
+      transform: scale(1.05);
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-4">
+    <img src="https://via.placeholder.com/100x50" alt="Khigin Travel Logo" class="h-12">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Khigin Travel</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-20">
+    <!-- Gambar Hero -->
+    <img 
+      src="https://via.placeholder.com/400" 
+      alt="Hotel illustration" 
+      class="rounded-lg shadow-lg mb-8 fade-in" 
+      id="hero-image"
+    >
+    <!-- Judul -->
+    <h2 class="text-3xl font-semibold text-gray-800 mb-4 fade-in" id="hero-title">
+      Cari Akomodasi Terbaik di Depok
+    </h2>
+    <p class="text-gray-600 mb-6 fade-in" id="hero-description">
+      Temukan hotel terbaik dengan harga terjangkau untuk liburan atau perjalanan bisnis Anda.
+    </p>
+
+    <!-- Form Pencarian -->
+    <form 
+      action="hasil-pencarian.html" 
+      method="get" 
+      class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md fade-in" 
+      id="search-form"
+    >
+      <!-- Check-In -->
+      <div class="mb-4">
+        <label for="check-in" class="block text-left text-gray-700 font-medium mb-2">
+          Check-In
+        </label>
+        <input 
+          type="date" 
+          id="check-in" 
+          name="check_in"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+
+      <!-- Check-Out -->
+      <div class="mb-4">
+        <label for="check-out" class="block text-left text-gray-700 font-medium mb-2">
+          Check-Out
+        </label>
+        <input 
+          type="date" 
+          id="check-out" 
+          name="check_out"
+          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+
+      <!-- Banyaknya Orang -->
+      <div class="mb-4">
+        <label class="block text-left text-gray-700 font-medium mb-2">
+          Banyaknya Orang
+        </label>
+        <div class="flex space-x-4">
+          <!-- Dewasa -->
+          <div class="flex-1">
+            <label for="dewasa" class="block text-gray-600 mb-1">Dewasa</label>
+            <select 
+              id="dewasa" 
+              name="dewasa"
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </div>
+          <!-- Anak -->
+          <div class="flex-1">
+            <label for="anak" class="block text-gray-600 mb-1">Anak</label>
+            <select 
+              id="anak" 
+              name="anak"
+              class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol Submit -->
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white font-semibold rounded-md py-2 button-hover">
+        Cari Hotel
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-4 mt-10">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 Khigin Travel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animasi fade-in saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-in");
+      elements.forEach((el) => {
+        setTimeout(() => {
+          el.classList.add("active");
+        }, 500); // Delay 500ms
+      });
+    });
+  </script>
+</body>
+</html>
